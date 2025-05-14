@@ -44,12 +44,12 @@ def contact():
     dipendenti = request.form['dipendenti']
     message = request.form['message']
 
-    msg = Message(subject=f"Nuovo Contatto TeamTime da {name}",
+    msg = Message(subject=f"Nuovo Contatto App Eleven da {name}",
                   sender=app.config['MAIL_USERNAME'],
                   recipients=["info.appeleven@gmail.com"],
                   body=f"""Messaggio da:
                   Azienda: {name}
-                  Dipendenti: {dipendenti}
+                  Nome Completo: {dipendenti}
                   Telefono: {telefono}
                   Messaggio: {message}""")
     mail.send(msg)
